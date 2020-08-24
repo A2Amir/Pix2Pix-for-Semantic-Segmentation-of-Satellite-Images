@@ -1,2 +1,6 @@
-# How To Use Pix2Pix for Semantic Segmentation of Satellite Images
- 
+1. Introduction
+In the last three posts I have explained Generative Adversarial Network, its problems and an extension of the Generative Adversarial Network called Conditional Generative Adversarial Network to solve the problem in the successful training of the GAN.
+As claimed earlier in the last post, Image to Image translation is one of the tasks, which can be done by Conditional Generative Adversarial Networks (CGANs) ideally. In the task of Image-to-Image translation, an image can be converted into another one by defining a loss function which is extremely complicated. Accordingly, this task has many applications like colorization and making maps by converting aerial photos. Figures above show great example of Image to Image translation.
+Pix2Pix network was developed based on the CGAN. Some of the applications of this efficient method include object reconstruction from edges, photos synthesis from label maps, and image colorization [source].
+2. The architecture of Pix2Pix Network
+As mentioned above, Pix2Pix is based on conditional generative adversarial networks (CGAN) to learn a mapping function that maps an input image into an output image. Pix2Pix like GAN, CGAN is also made up of two networks, the generator and the discriminator. Figure below indicates a very high-level view of the Image-to-Image architecture from the Pix2Pix paper.
