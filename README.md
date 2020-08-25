@@ -56,13 +56,23 @@ As shown in figure above, the right figure represents the result for building fo
 
 As known, how buildings look like, depends on how the contours of the building are drawn. The most crucial information of an object is the object boundary and the shape and edges of a segmented building can be controlled or improved with the help of contours (the object boundary). Based on this assumption, the extracted contours of each ground truth were added to the corresponding ground truth again to reinforce the shape and edges of a segmented building for further research.
 
-![**Extracting and adding again contours to objects of the ground truths**](https://cdn-images-1.medium.com/max/2000/1*4TJwqrRMD0ZF09qzqtSCHw.png)
+
+
+
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/2000/1*4TJwqrRMD0ZF09qzqtSCHw.png" alt="Extracting and adding again contours to objects of the ground truths" >
+ </p>
+
+
 
 As seen in figures above, contours were added again to objects of the ground truths after extracting them with the OpenCV library.
 
 After adding corrsponding contours again to objects of the ground truths (on the fly in the code), **Satellite images and ground truths with overlaid** **contours **(An example shown in the following) form the dataset used in the training of Pix2Pix network.
 
-![](https://cdn-images-1.medium.com/max/2000/1*k-ZUBwoWJdOQsqAc4-KUGg.png)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/2000/1*k-ZUBwoWJdOQsqAc4-KUGg.png"  >
+ </p>
+
 
 **After defining th dataset, the weights of Pix2Pix network are adjusted in two steps.**
 >  **In the first step, The discriminator** (figure below) takes **the input (Satellite image)/target (ground truths with overlaid** **contours) **and **then input (Satellite image)/output (generator’ output) **pairs, to estimate how realistic they look like. Then the adjustment of the discriminator’s weights is done according to the classification error of the mentioned pairs.
@@ -74,7 +84,12 @@ After adding corrsponding contours again to objects of the ground truths (on the
 
 Based on the paper, the objective function can be expressed as follow:
 
-![](https://cdn-images-1.medium.com/max/2000/1*YO2XC9AL8DTRm2zIjb1YNA.png)
+
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/2000/1*YO2XC9AL8DTRm2zIjb1YNA.png"  >
+ </p>
+
+
 
 The Authors of Pix2Pix used and added the loss function L1 measuring the standard distance between the generated output and the target.
 
@@ -108,9 +123,16 @@ A validation dataset will be needed to evaluate the model in the duration of tra
 
 After training Pix2Pix on the training dataset, as shown below and tested on the validation and test datasets, the generator of Pix2Pix trying to improve the results and makes predictions which look like ground truths from the perspective of contours and edges.
 
-![](https://cdn-images-1.medium.com/max/2040/1*wgXEu3PKla3aJBnwf3QZ5w.png)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/2040/1*wgXEu3PKla3aJBnwf3QZ5w.png"  >
+ </p>
 
-![**The results of Pix2Pix on the validation dataset**](https://cdn-images-1.medium.com/max/2096/1*ZtCWIwraCNddhpisqIPcHQ.png)
+
+
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/2096/1*ZtCWIwraCNddhpisqIPcHQ.png" alt ="The results of Pix2Pix on the validation dataset">
+ </p>
+
 
 ![](https://cdn-images-1.medium.com/max/2084/1*RuThTjRq6HaV6119zD__pw.png)
 
