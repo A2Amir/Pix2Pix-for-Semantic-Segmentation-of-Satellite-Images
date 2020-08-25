@@ -75,10 +75,13 @@ After adding corrsponding contours again to objects of the ground truths (on the
 
 
 **After defining th dataset, the weights of Pix2Pix network are adjusted in two steps.**
->  **In the first step, The discriminator** (figure below) takes **the input (Satellite image)/target (ground truths with overlaid** **contours) **and **then input (Satellite image)/output (generator’ output) **pairs, to estimate how realistic they look like. Then the adjustment of the discriminator’s weights is done according to the classification error of the mentioned pairs.
+
+>  **In the first step, The discriminator** (figure below) takes **the input (Satellite image)/target (ground truths with overlaid contours)** and **then input (Satellite image)/output (generator’ output)** pairs, to estimate how realistic they look like. Then the adjustment of the discriminator’s weights is done according to the classification error of the mentioned pairs.
 
 ![**The flowchart of the adjusting weights of the discriminator**](https://cdn-images-1.medium.com/max/2174/1*l5GfHYZWZ9gC2FlWxbErPQ.png)
->  **In the second step, The generator’s weights **(figure below) ****adjust by using the discriminator’s output and the difference between the output and target images.
+
+>  **In the second step, The generator’s weights**(figure below) **adjust by using the discriminator’s output and the difference between the output and target images.**
+
 
 ![**The flowchart of the adjusting weights of the generator**](https://cdn-images-1.medium.com/max/3060/1*PxyDwZUG_RgG7Aro7xYqWg.png)
 
@@ -95,25 +98,39 @@ The Authors of Pix2Pix used and added the loss function L1 measuring the standar
 
 ## 4. The training, validation, and test Dataset
 
-In this section, the characteristics of the [**FH Kufstein dataset](https://www.fh-kufstein.ac.at/)** will be explained. This dataset consists of two categories which are shown in Table below.
+In this section, the characteristics of the **[FH Kufstein dataset](https://www.fh-kufstein.ac.at/)** will be explained. This dataset consists of two categories which are shown in Table below.
 
 ![**The characteristics of the FH kufstein dataset**](https://cdn-images-1.medium.com/max/2000/1*OBJtodXskiwpIcMoiKWbUQ.png)
 
 As known, all pixels of an image are important when each pixel is used by a segmentation model with a specific size of the input. Therefore, the data (pixels) will be lost from the image and the size of the image will be much smaller if the number of pixels have to reduce to meet this specific size of the input. It can be crucial to retain more information about images when it comes to resizing an image without losing quality.
 
-The images of the [**FH Kufstein dataset](https://www.fh-kufstein.ac.at/)** have to cut into 256×256 because Pix2Pix only takes in 256×256 images. In the first attempt, the size of the satellite and corresponding ground truth images was reduced all at once to 256×256, which leads to losing 158.488.281 pixels. According to the fact that each pixel plays an important role in detecting each edge of a building, many pixels got lost. For this reason, a process was designed to select and cut images:
->  **1. Due to lack of time and processing power, images with a high building density are selected from the entire dataset.**
->  **2. The size (4053×4053 pixels) of each selected image from the dataset (Satellite images and ground truths with overlaid** **contours) is changed to 4050×4050 pixels (see example blow).**
+The images of the **[FH Kufstein dataset](https://www.fh-kufstein.ac.at/)** have to cut into 256×256 because Pix2Pix only takes in 256×256 images. In the first attempt, the size of the satellite and corresponding ground truth images was reduced all at once to 256×256, which leads to losing 158.488.281 pixels. According to the fact that each pixel plays an important role in detecting each edge of a building, many pixels got lost. For this reason, a process was designed to select and cut images:
 
-![**From 40537×40537 pixels to 4050×4050 pixels**](https://cdn-images-1.medium.com/max/2000/1*gKwU8KLnbzm3V5Bc3ZCKdg.png)
+>  **1. Due to lack of time and processing power, images with a high building density are selected from the entire dataset.**
+
+>  **2. The size (4053×4053 pixels) of each selected image from the dataset (Satellite images and ground truths with overlaid contours) is changed to 4050×4050 pixels (see example blow).**
+
+
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/2000/1*gKwU8KLnbzm3V5Bc3ZCKdg.png" alt="From 40537×40537 pixels to 4050×4050 pixels" >
+ </p>
+
 >  **3. Images from the last step cropped to the size of 675×675 pixels (see example blow).**
 
-![](https://cdn-images-1.medium.com/max/2000/1*D6H6ww0yasUmVi4fnZ7kmA.png)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/2000/1*D6H6ww0yasUmVi4fnZ7kmA.png" >
+ </p>
+
+
+
 >  **4. The size of all cropped images resized to 256 × 256 pixels, which means that little information is lost (approx. 2.636.718 pixels, which is little compared to 158.488.281 pixels).**
 
-![](https://cdn-images-1.medium.com/max/2000/1*3UaTHqZ6opnHl_3M2V2gyg.png)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/2000/1*3UaTHqZ6opnHl_3M2V2gyg.png" >
+ </p>
 
-The described process is repeated for all Images (***Satellite images and ground truths with overlaid ****contours***) to create the training, validation, and test datasets and the properties of each created dataset are indicated in Table below.
+
+The described process is repeated for all Images (***Satellite images and ground truths with overlaid contours***) to create the training, validation, and test datasets and the properties of each created dataset are indicated in Table below.
 
 ![**The characteristics of the training, validation and test datasets derived from the FH dataset**](https://cdn-images-1.medium.com/max/2000/1*37tTSPOydHoBvdTQmHQ_Zw.png)
 
