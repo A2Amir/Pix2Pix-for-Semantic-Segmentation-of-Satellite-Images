@@ -1,17 +1,21 @@
-﻿
+
 ## What Is Pix2Pix and How To Use It for Semantic Segmentation of Satellite Images?
 
-![**Some Applications of Pix2Pix**](https://cdn-images-1.medium.com/max/2000/1*sqSDg7sha53xQMYCK_Ecgw.png)
+
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/2000/1*sqSDg7sha53xQMYCK_Ecgw.png" alt="Some Applications of Pix2Pix" width="600" height="400" >
+ </p>
+
 
 ## 1. Introduction
 
 **In the last three posts I have explained [Generative Adversarial Network](https://medium.com/analytics-vidhya/generative-adversarial-network-gan-b510d41df2cb), [its problems ](https://medium.com/analytics-vidhya/the-problems-of-generative-adversarial-networks-gans-3d887efa578e)and an extension of the Generative Adversarial Network called [Conditional Generative Adversarial Network](https://medium.com/analytics-vidhya/conditional-generative-adversarial-networks-cgans-46532afbdcc1) to solve the problems in the successful training of the GAN.**
 
-As claimed earlier in [the last post](https://medium.com/analytics-vidhya/conditional-generative-adversarial-networks-cgans-46532afbdcc1), **Image to Image translation **is one of the tasks, which can be done by [**Conditional Generative Adversarial Networks](https://medium.com/analytics-vidhya/conditional-generative-adversarial-networks-cgans-46532afbdcc1) **(**CGANs**) ideally.
+As claimed earlier in [the last post](https://medium.com/analytics-vidhya/conditional-generative-adversarial-networks-cgans-46532afbdcc1), **Image to Image translation** is one of the tasks, which can be done by **[Conditional Generative Adversarial Networks](https://medium.com/analytics-vidhya/conditional-generative-adversarial-networks-cgans-46532afbdcc1)** (**CGANs**) ideally.
 
 In the task of Image to Image translation, an image can be converted into another one by defining a loss function which is extremely complicated. Accordingly, this task has many applications like colorization and making maps by converting aerial photos. Figures above show great example of Image to Image translation.
 
-**Pix2Pix network was developed based on the [CGAN](https://medium.com/analytics-vidhya/conditional-generative-adversarial-networks-cgans-46532afbdcc1). **Some of the applications of this efficient method include object reconstruction from edges, photos synthesis from label maps, and image colorization [[source](https://phillipi.github.io/pix2pix/)].
+**Pix2Pix network was developed based on the [CGAN](https://medium.com/analytics-vidhya/conditional-generative-adversarial-networks-cgans-46532afbdcc1).** Some of the applications of this efficient method include object reconstruction from edges, photos synthesis from label maps, and image colorization [[source](https://phillipi.github.io/pix2pix/)].
 
 ## 2. The architecture of Pix2Pix Network
 
@@ -21,7 +25,7 @@ As mentioned above, Pix2Pix is based on conditional generative adversarial netwo
 
 ### **2.1 The Generator Architecture**
 
-**The generator goal is to take an input image and convert it into the desired image (output or ground truth) by implementing necessary tasks**. **There are two types of the generator, including encoder-decoder and U-Net network. **The latter difference is to have skip connections.
+**The generator goal is to take an input image and convert it into the desired image (output or ground truth) by implementing necessary tasks**. **There are two types of the generator, including encoder-decoder and U-Net network.** The latter difference is to have skip connections.
 
 Encoder-decoder networks translate and compress input images into a low-dimensional vector presentation (bottleneck). Then, the process is reversed, and the multitudinous low-level information exchanged between the input and output can be utilized to execute all necessary information across the network. In order to circumvent the bottleneck for information, they added a skip connection between each layer **i** and **n-i** where **i** is the total number of the layers. It should be noted that the shape of the generator with skip connections looks like a U-Net network. Those images are shown below.
 
@@ -43,7 +47,10 @@ As the authors claim, since the number of PatchGAN discriminator parameters is v
 
 It is well known that there are many segmentation networks, which can segment objects, but the most important thing that they do not consider is to have segmentation networks that their segmented objects look like ground truths from the perspectives of shapes and edges and contours . To make the topic more clear, an example from one of the own practical projects that was carried out is presented below.
 
-![**An example for building footprint segmentation**](https://cdn-images-1.medium.com/max/2000/1*kMC7Txgk9PFMuipvZyDkwQ.png)
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/2000/1*kMC7Txgk9PFMuipvZyDkwQ.png" alt="An example for building footprint segmentation" width="600" height="200" >
+ </p>
+
 
 As shown in figure above, the right figure represents the result for building footprint segmentation, and the middle figure shows the corresponding ground truth. The model can detect where buildings are located but fails to reflect the boundaries, which are present in the ground truth and edges and contours of the segmented buildings doesn’t match exactly the ground truth.
 
