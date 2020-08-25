@@ -67,7 +67,7 @@ As known, how buildings look like, depends on how the contours of the building a
 
 As seen in figures above, contours were added again to objects of the ground truths after extracting them with the OpenCV library.
 
-After adding corrsponding contours again to objects of the ground truths (on the fly in the code), **Satellite images and ground truths with overlaid** **contours **(An example shown in the following) form the dataset used in the training of Pix2Pix network.
+After adding corrsponding contours again to objects of the ground truths (on the fly in the code), **Satellite images and ground truths with overlaid contours** (An example shown in the following) form the dataset used in the training of Pix2Pix network.
 
 <p align="center">
   <img src="https://cdn-images-1.medium.com/max/2000/1*k-ZUBwoWJdOQsqAc4-KUGg.png"  >
