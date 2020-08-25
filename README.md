@@ -126,7 +126,8 @@ The images of the **[FH Kufstein dataset](https://www.fh-kufstein.ac.at/)** have
 >  **4. The size of all cropped images resized to 256 × 256 pixels, which means that little information is lost (approx. 2.636.718 pixels, which is little compared to 158.488.281 pixels).**
 
 <p align="center">
-  <img src="https://cdn-images-1.medium.com/max/2000/1*3UaTHqZ6opnHl_3M2V2gyg.png" >
+  <img src="https://cdn-images-1.medium.com/max/2000/1*pplfSzFG6lBmaxtx4ERijw.png" >
+
  </p>
 
 
