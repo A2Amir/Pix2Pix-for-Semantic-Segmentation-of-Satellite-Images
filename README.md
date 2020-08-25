@@ -74,7 +74,7 @@ After adding corrsponding contours again to objects of the ground truths (on the
  </p>
 
 
-**After defining th dataset, the weights of Pix2Pix network are adjusted in two steps.**
+**After defining [th dataset](https://github.com/A2Amir/Pix2Pix-for-Semantic-Segmentation-of-Satellite-Images/tree/master/Dataset/Klein_Dataset2), the weights of Pix2Pix network are adjusted in two steps.**
 
 >  **In the first step, The discriminator** (figure below) takes **the input (Satellite image)/target (ground truths with overlaid contours)** and **then input (Satellite image)/output (generator’ output)** pairs, to estimate how realistic they look like. Then the adjustment of the discriminator’s weights is done according to the classification error of the mentioned pairs.
 
@@ -144,7 +144,7 @@ A validation dataset will be needed to evaluate the model in the duration of tra
 
 ## 5. Evaluation Criteria and Results
 
-After training Pix2Pix on the training dataset, as shown below and tested on the validation and test datasets, the generator of Pix2Pix trying to improve the results and makes predictions which look like ground truths from the perspective of contours and edges.
+After [training Pix2Pix](https://github.com/A2Amir/Pix2Pix-for-Semantic-Segmentation-of-Satellite-Images/blob/master/Code/PIX2PIX.ipynb) on [the training dataset](https://github.com/A2Amir/Pix2Pix-for-Semantic-Segmentation-of-Satellite-Images/tree/master/Dataset/Klein_Dataset2), as shown below and tested on the validation and test datasets, the generator of Pix2Pix trying to improve the results and makes predictions which look like ground truths from the perspective of contours and edges.
 
 <p align="center">
   <img src="https://cdn-images-1.medium.com/max/2040/1*wgXEu3PKla3aJBnwf3QZ5w.png"  >
