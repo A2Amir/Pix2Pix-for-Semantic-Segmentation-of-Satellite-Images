@@ -132,7 +132,13 @@ The images of the **[FH Kufstein dataset](https://www.fh-kufstein.ac.at/)** have
 
 The described process is repeated for all Images (***Satellite images and ground truths with overlaid contours***) to create the training, validation, and test datasets and the properties of each created dataset are indicated in Table below.
 
-![**The characteristics of the training, validation and test datasets derived from the FH dataset**](https://cdn-images-1.medium.com/max/2000/1*37tTSPOydHoBvdTQmHQ_Zw.png)
+
+
+<p align="center">
+  <img src="https://cdn-images-1.medium.com/max/2000/1*37tTSPOydHoBvdTQmHQ_Zw.png" alt="The characteristics of the training, validation and test datasets derived from the FH dataset">
+ </p>
+
+
 
 A validation dataset will be needed to evaluate the model in the duration of training. The validation dataset can be employed for training goals to find and optimize the best model. In this experiment, the validation dataset can be employed for overfitting minimization and hyper-parameter fine-tuning.
 
@@ -155,19 +161,10 @@ After training Pix2Pix on the training dataset, as shown below and tested on the
 
 ![**The results of Pix2Pix on the test dataset**](https://cdn-images-1.medium.com/max/2042/1*JzBBQEp8dyP6NIgkjP2Hmw.png)
 
-Evaluating the segmentation quality is very important for image processing, particularly in security cases, including autonomous vehicles. There are many evaluation criteria developed for segmentation evaluation so that researchers can make a choice based on their needs. In [**this post ](https://github.com/A2Amir/Evaluation-Criteria-for-Segmentation-Networks)**on [**my github](https://github.com/A2Amir)** you can read the evaluation criteria of segmentation networks.
+Evaluating the segmentation quality is very important for image processing, particularly in security cases, including autonomous vehicles. There are many evaluation criteria developed for segmentation evaluation so that researchers can make a choice based on their needs. In **[this post](https://github.com/A2Amir/Evaluation-Criteria-for-Segmentation-Networks)** on **[my github](https://github.com/A2Amir)** you can read the evaluation criteria of segmentation networks.
 
 ## **6. Conclusion**
 
 Since the field of computer vision is significantly influenced by artificial neural intelligence and especially deep learning, many researcher and developers are interested in the implementation of a suitable deep learning architecture for building footprint segmentation. One of the most important issues in the field of segmentation are inefficient and inaccurate segmentation networks which output shapes differing from the shape of ground truth.
 
 The presented experiment aims at using Pix2Pix network to segment the building footprint. **The results of Pix2Pix on the test dataset seem to be good, but there is still much room for improvement of segmentation quality.**
->  [**On my github you will find all the code and data set related to the experiment](https://github.com/A2Amir/Pix2Pix-for-Semantic-Segmentation-of-Satellite-Images).**
-
-## Amir Ziaee
-[**A2Amir - Overview**
-*Master of software engineering,Master of Web Communication and Information Technology, Data Science ,Deep Learning…*github.com](https://github.com/A2Amir)
-[**Amir Ziaee - Medium**
-*Read writing from Amir Ziaee on Medium. https://github.com/A2Amir/. Every day, Amir Ziaee and thousands of other voices…*medium.com](https://medium.com/@ziaee.a.a)
-[**Amir Z. - Information Technology Teacher - Javan Rayaneh Institute | LinkedIn**
-*Hi, I am Amir, who loves analysing big data and building smart products in the field of Machine Learning, Computer…*www.linkedin.com](https://www.linkedin.com/in/Ziaee-A-Amir/)
