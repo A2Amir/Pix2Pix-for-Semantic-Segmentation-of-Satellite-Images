@@ -98,13 +98,13 @@ The Authors of Pix2Pix used and added the loss function L1 measuring the standar
 
 ## 4. The training, validation, and test Dataset
 
-In this section, the characteristics of the **[FH Kufstein dataset](https://www.fh-kufstein.ac.at/)** will be explained. This dataset consists of two categories which are shown in Table below.
+In this section, the characteristics of **[the Orthofoto Tirol dataset](https://www.data.gv.at/katalog/dataset/35691b6c-9ed7-4517-b4b3-688b0569729a)** will be explained. This dataset consists of two categories which are shown in Table below.
 
-![**The characteristics of the FH kufstein dataset**](https://cdn-images-1.medium.com/max/2000/1*OBJtodXskiwpIcMoiKWbUQ.png)
+![**The characteristics of the Orthofoto Tirol dataset**](https://cdn-images-1.medium.com/max/2000/1*OBJtodXskiwpIcMoiKWbUQ.png)
 
 As known, all pixels of an image are important when each pixel is used by a segmentation model with a specific size of the input. Therefore, the data (pixels) will be lost from the image and the size of the image will be much smaller if the number of pixels have to reduce to meet this specific size of the input. It can be crucial to retain more information about images when it comes to resizing an image without losing quality.
 
-The images of the **[FH Kufstein dataset](https://www.fh-kufstein.ac.at/)** have to cut into 256×256 because Pix2Pix only takes in 256×256 images. In the first attempt, the size of the satellite and corresponding ground truth images was reduced all at once to 256×256, which leads to losing 158.488.281 pixels. According to the fact that each pixel plays an important role in detecting each edge of a building, many pixels got lost. For this reason, a process was designed to select and cut images:
+The images of the **[the Orthofoto Tirol dataset](https://www.data.gv.at/katalog/dataset/35691b6c-9ed7-4517-b4b3-688b0569729a)** have to cut into 256×256 because Pix2Pix only takes in 256×256 images. In the first attempt, the size of the satellite and corresponding ground truth images was reduced all at once to 256×256, which leads to losing 158.488.281 pixels. According to the fact that each pixel plays an important role in detecting each edge of a building, many pixels got lost. For this reason, a process was designed to select and cut images:
 
 >  **1. Due to lack of time and processing power, images with a high building density are selected from the entire dataset.**
 
